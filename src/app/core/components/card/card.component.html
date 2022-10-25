@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="photo?.img_src" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Rover: {{photo?.rover?.name}}</h5>
+    <h6 class="card-title">Camera: {{photo?.camera?.name}}</h6>
+  </div>
+  <div class="card-footer text-muted">
+    Aterrizaje: {{photo?.rover?.landing_date}}
+  </div>
+</div>
