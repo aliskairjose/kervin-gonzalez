@@ -17,6 +17,11 @@ export class NasaService {
     private http: HttpClient
   ) { }
 
+  /**
+   * @descriptio Listado de rovers
+   * @param rover Tipo de rover curiosity | opportunity | spirit
+   * @returns Listado de fotos segun el rover
+   */
   getPhotos( rover: rover ): Observable<Response> {
     return this.http.get<Response>( `${this.baseUrl}/${rover}/photos?sol=1000&api_key=${environment.api_key}` )
   }

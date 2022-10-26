@@ -8,7 +8,7 @@ import { Photo } from '../../interfaces/photo';
 })
 export class CardComponent implements OnInit {
 
-  @Input() photo: Photo | undefined
+  @Input() photo: Photo | undefined;
 
   constructor() { }
 
