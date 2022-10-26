@@ -24,7 +24,7 @@ export class AppComponent {
       .getPhotos( rover )
       .subscribe(
         response => this.photos = [ ...response.photos ],
-        error => console.error(error),
+        error => console.error( error ),
         () => this.isLoading = false
       );
   }
