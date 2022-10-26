@@ -1,0 +1,37 @@
+<div class="container py-3">
+  <div class="jumbotron">
+    <div class="d-flex align-items-center justify-content-between">
+      <div>
+        <h1 class="display-4">{{title}}</h1>
+        <p class="lead">Imagenes de los vehículos rovers CURSIOSITY | OPORTUNITY | SPIRIT.</p>
+      </div>
+      <img src="../assets/images/NASA_logo.png" style="width:20%;" alt="">
+    </div>
+    <hr class="my-4">
+    <div class="d-flex flex-column align-items-center align-items-center">
+      <p class="mr-3">Seleccione el Mars Rover </p>
+      <div class="btn-group" role="group" aria-label="Basic example" aria-current="page">
+        <button type="button" class="btn btn-outline-info" (click)="getPhotos('spirit')">Spirit</button>
+        <button type="button" class="btn btn-outline-info" (click)="getPhotos('opportunity')">Opportunity</button>
+        <button type="button" class="btn btn-outline-info" (click)="getPhotos('curiosity')">Curiosity</button>
+      </div>
+    </div>
+  </div>
+  <main>
+    <ng-container *ngIf="isLoading; else elseTemplate">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border text-info" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <div class="d-flex flex-row flex-wrap justify-content-between">
+        <ng-container *ngFor="let photo of photos; let i=index">
+          <app-card [photo]="photo" class="my-2"></app-card>
+        </ng-container>
+      </div>
+    </ng-template>
+
+  </main>
+</div>
