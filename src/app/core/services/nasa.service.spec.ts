@@ -25,7 +25,7 @@ describe( 'NasaService', () => {
     expect( service ).toBeTruthy();
   } );
 
-  it( 'obtencion de informaición de rovers', ( done: DoneFn ) => {
+  it( 'obtencion de información de rovers', ( done: DoneFn ) => {
     const mockData: rover = 'curiosity';
     const mockResponse = {
       photos: [
